@@ -4,21 +4,24 @@ import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import refresh.qiang.com.myrefreshlayout.R;
 
-public class FootView extends LinearLayout {
-    public FootView(Context context) {
+public class HeadView extends LinearLayout {
+
+    TextView tx;
+
+    public HeadView(Context context) {
         this(context,null);
     }
 
-    public FootView(Context context, @Nullable AttributeSet attrs) {
+    public HeadView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs,0);
     }
 
-    public FootView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public HeadView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initView();
     }
@@ -27,7 +30,14 @@ public class FootView extends LinearLayout {
 
         LayoutInflater inflater = LayoutInflater.from(getContext());
 
-        inflater.inflate(R.layout.foot_view,this,true);
+        inflater.inflate(R.layout.head_view,this,true);
+
+        tx = findViewById(R.id.textView);
+    }
+
+    public void setText(String text){
+
+        tx.setText(text);
 
     }
 
